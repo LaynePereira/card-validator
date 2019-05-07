@@ -1,10 +1,13 @@
 {
   "name": "card-validator-jess",
   "version": "1.0.0",
-  "description": "card-validator lib",
+  "description": "Biblioteca para validação de Cartão de Crédito",
   "main": "index.js",
+  "directories": {
+    "test": "index.spec.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc mocha"
   },
   "keywords": [
     "card",
@@ -18,6 +21,7 @@
   },
   "dependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.1.4"
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.0"
   }
 }
