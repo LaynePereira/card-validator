@@ -15,7 +15,7 @@ $  npm install card-validator-jess
 
 ```node
 
-> const cardValidator = require("cpfValidator-jess");
+> const cardValidator = require("card-validator-jess");
 > console.log(cardValidator("4411201432235942"))
 > // returns "true"
 
