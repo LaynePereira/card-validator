@@ -1,30 +1,36 @@
 const chai = require('chai');
 const expect = chai.expect;
-const card = require('../index');
+const cardcardNumber = require('../index');
 
-
-describe('cardValidator', () => {
-
-    it('CardPF is not valid', () => {
-        expect(card.cardValidator('5234217392215346')).to.equal(false);
-    });5
-
-    it('Card is valid', () => {
-        expect(card.cardValidator('234 2173 9221 5346')).to.equal(true);
-    });
-
-    it('Card is not valid', () => {
-        expect(card.cardValidator('39107173815')).to.equal(false);
-    });
-
-    it('Card is incomplete', () => {
-        expect(card.cardValidator('3910717')).to.equal(false);
-    });
-
-    it('Card can not be empty', () => {
-        expect(card.cardValidator('')).to.equal(false);
-    });
-    it('Card is valid', () => {
-        expect(card.cardValidator('10726985368')).to.equal(true);
+describe('Card', function () {
+    describe('cardValidator', function () {
+        describe('Quando não houver parametro', function () {
+            it('deve lançar um erro', function () {
+                var badFn = function () { cardNumber.cardValidator(); };
+                expect(badFn).to.throw(Error);
+            });
+        });
+        describe('Quando o numero for uma string', function () {
+            it('deve lançar um erro', function () {
+                var badFn = function () { cardNumber.cardValidator('essa string'); };
+                expect(badFn).to.throw(Error);
+            });
+        });
+        describe('Quando houver menos de 10 digitos', function () {
+            it('deve lançar um erro', function () {
+                var badFn = function () { cardNumber.cardValidator(1234); };
+                expect(badFn).to.throw(Error);
+            });
+        });
+        describe('Quando o numero for valido', function () {
+            it('retornar true', function () {
+                expect(card.cardValidator(4411201432235942)).to.be.true;
+            });
+        });
+        describe('Quando o numero for invalido', function () {
+            it('retornar false', function () {
+                expect(card.cardValidator(111111111111111)).to.be.false;
+            });
+        });
     });
 });
