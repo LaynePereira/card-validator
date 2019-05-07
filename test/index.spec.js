@@ -1,6 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
-const cardcardNumber = require('../index');
+const cardNumber = require('../index');
 
 describe('Card', function () {
     describe('cardValidator', function () {
@@ -24,12 +24,12 @@ describe('Card', function () {
         });
         describe('Quando o numero for valido', function () {
             it('retornar true', function () {
-                expect(card.cardValidator(4411201432235942)).to.be.true;
+                expect(cardNumber.cardValidator(4411201432235942)).to.be.true;
             });
         });
         describe('Quando o numero for invalido', function () {
             it('retornar false', function () {
-                expect(card.cardValidator(111111111111111)).to.be.false;
+                expect(cardNumber.cardValidator(111111111111111)).to.be.false;
             });
         });
     });
