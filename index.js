@@ -18,4 +18,4 @@ function cardValidator(cardNumber) {
   }
 }
 module.exports.cardValidator = cardValidator;
-console.log(cardValidator(4411201432235942));
+// console.log(cardValidator(4411201432235942));
